@@ -94,3 +94,17 @@ Edit config.json to set your:
 
 
 pytest tests/
+
+
+
+
+⸻
+
+
+📜 License
+
+
+MIT
+
+
+
