@@ -1,7 +1,10 @@
-aiohttp==3.9.5
-
-sqlalchemy==2.0.29
-
-requests==2.32.2
-
-python-telegram-bot==21.1
+asyncio
+requests
+aiohttp
+sqlalchemy
+psycopg2-binary
+python-telegram-bot==20.3
+websockets
+pandas
+numpy
+redis
