@@ -1,32 +1,30 @@
-# Trading Bot 🚀
+# Rolls Royce Trading Bot 🚀
 
-This bot fetches tokens from DexScreener and Pump.fun, filters them,
-checks rug risks with RugCheck, verifies fake volume with Pocket Universe,
-runs on-chain enrichment (Etherscan, BscScan, BaseScan, Solscan),
-and auto-trades via BonkBot with Telegram alerts.
+A fully automated crypto trading bot that integrates:
 
----
+- DexScreener + Pump.fun
+- RugCheck.xyz API
+- Pocket Universe fake volume checks
+- On-chain enrichment (Etherscan, BscScan, BaseScan, Solscan)
+- Filters + Blacklists
+- Auto Buy/Sell with profit targets + stop-loss
+- Telegram notifications
+- Docker + GitHub CI/CD ready
 
-## Features
-- ✅ DexScreener + Pump.fun fetchers
-- ✅ RugCheck API integration
-- ✅ Pocket Universe fake-volume detection
-- ✅ Blacklist for coins & developers
-- ✅ On-chain enrichment (Etherscan, Solscan, etc.)
-- ✅ Auto-buy / auto-sell with 20–30% profit target
-- ✅ Stop-loss at 15%
-- ✅ Telegram real-time alerts
-- ✅ Docker + GitHub Actions ready
+## 🔧 Setup
 
----
+1. Clone repo:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/trading-bot.git
+   cd trading-bot
 
-## 🔧 Installation
+    Install deps:
 
-### Windows (PowerShell)
-```powershell
-git clone https://github.com/YOUR_USERNAME/trading-bot.git
-cd trading-bot
-python -m venv venv
-.\venv\Scripts\Activate
 pip install -r requirements.txt
+
+
+    Add your keys to config/.env.
+
+    Run bot:
+
 python bot/main.py
