@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  trading-bot-db:
+    image: postgres:15
+    container_name: trading-bot-db
+    restart: always
+    environment:
+      POSTGRES_USER: botuser
+      POSTGRES_PASSWORD: botpass
+      POSTGRES_DB: trading
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  trading-bot-redis:
+    image: redis:7
+    container_name: trading-bot-redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  trading-bot:
+    build: .
+    container_name: trading-bot
+    depends_on:
+      - trading-bot-db
+      - trading-bot-redis
+    env_file:
+      - config/.env
+    volumes:
+      - .:/app
+    command: ["python", "bot/main.py"]
+
+volumes:
+  db_data:
